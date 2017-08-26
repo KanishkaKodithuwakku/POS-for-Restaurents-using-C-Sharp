@@ -94,3 +94,6 @@ C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_Productqty.res
 C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_SearchProduct.resources
 C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Properties.Resources.resources
 C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.csproj.GenerateResource.Cache
+C:\vb\pos-2.3-restaurant\posv2\bin\Debug\posv2.exe.config
+C:\vb\pos-2.3-restaurant\posv2\obj\Debug\posv2.exe
+C:\vb\pos-2.3-restaurant\posv2\obj\Debug\posv2.pdb
