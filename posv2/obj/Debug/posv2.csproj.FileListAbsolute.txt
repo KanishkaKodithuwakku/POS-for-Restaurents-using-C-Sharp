@@ -1,0 +1,96 @@
+C:\vb\posv2\posv2\bin\Debug\posv2.exe.config
+C:\vb\posv2\posv2\bin\Debug\posv2.exe
+C:\vb\posv2\posv2\bin\Debug\posv2.pdb
+C:\vb\posv2\posv2\obj\Debug\posv2.Form_login.resources
+C:\vb\posv2\posv2\obj\Debug\posv2.Form_display.resources
+C:\vb\posv2\posv2\obj\Debug\posv2.Properties.Resources.resources
+C:\vb\posv2\posv2\obj\Debug\posv2.csproj.GenerateResource.Cache
+C:\vb\posv2\posv2\obj\Debug\posv2.exe
+C:\vb\posv2\posv2\obj\Debug\posv2.pdb
+C:\vb\posv2\posv2\obj\Debug\posv2.Form_auth.resources
+C:\Users\kanis\Desktop\posv2\posv2\bin\Debug\posv2.exe.config
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.exe
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.pdb
+C:\Users\kanis\Desktop\posv2\posv2\bin\Debug\posv2.exe
+C:\Users\kanis\Desktop\posv2\posv2\bin\Debug\posv2.pdb
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.Form_auth.resources
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.Form_login.resources
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.Form_display.resources
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.Properties.Resources.resources
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.csproj.GenerateResource.Cache
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.Form_Productqty.resources
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.Form_Pay.resources
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.Form_dineIn.resources
+C:\Users\kanis\Desktop\posv2\posv2\obj\Debug\posv2.Form_change.resources
+C:\Users\PC\Desktop\posv2\posv2\bin\Debug\posv2.exe.config
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.exe
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.pdb
+C:\Users\PC\Desktop\posv2\posv2\bin\Debug\posv2.exe
+C:\Users\PC\Desktop\posv2\posv2\bin\Debug\posv2.pdb
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Form_auth.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Form_change.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Form_dineIn.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Form_login.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Form_display.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Form_Pay.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Form_Productqty.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Properties.Resources.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.csproj.GenerateResource.Cache
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Discount.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.Form_SearchProduct.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\bin\Debug\posv2.exe.config
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.exe
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.pdb
+C:\Users\PC\Desktop\posv2 - Copy\posv2\bin\Debug\posv2.exe
+C:\Users\PC\Desktop\posv2 - Copy\posv2\bin\Debug\posv2.pdb
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Discount.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Form_auth.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Form_change.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Form_dineIn.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Form_login.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Form_display.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Form_Pay.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Form_Productqty.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Form_SearchProduct.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.Properties.Resources.resources
+C:\Users\PC\Desktop\posv2 - Copy\posv2\obj\Debug\posv2.csproj.GenerateResource.Cache
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.FormConfirmLogout.resources
+C:\Users\PC\Desktop\posv2\posv2\obj\Debug\posv2.FormWakeUp.resources
+C:\Users\PC\Desktop\posv2.2\posv2\bin\Debug\posv2.exe.config
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.exe
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.pdb
+C:\Users\PC\Desktop\posv2.2\posv2\bin\Debug\posv2.exe
+C:\Users\PC\Desktop\posv2.2\posv2\bin\Debug\posv2.pdb
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Discount.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.FormConfirmLogout.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.FormWakeUp.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Form_auth.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Form_change.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Form_dineIn.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Form_login.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Form_display.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Form_Pay.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Form_Productqty.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Form_SearchProduct.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.Properties.Resources.resources
+C:\Users\PC\Desktop\posv2.2\posv2\obj\Debug\posv2.csproj.GenerateResource.Cache
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\bin\Debug\posv2.exe.config
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.exe
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.pdb
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\bin\Debug\posv2.exe
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\bin\Debug\posv2.pdb
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Discount.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.FormConfirmLogout.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.FormWakeUp.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_auth.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_change.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_dineIn.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_login.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_display.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_Pay.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_Productqty.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Form_SearchProduct.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.Properties.Resources.resources
+C:\Users\PC\Desktop\posv2.3 restaurant\posv2\obj\Debug\posv2.csproj.GenerateResource.Cache
