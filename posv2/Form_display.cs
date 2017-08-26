@@ -71,23 +71,26 @@ namespace posv2
             int shifNo = 0;
 
             //find shif end or not
-            string queryForCheckShift = "select shift_end,SUM(shift_no) AS shift_no from shift where shift_date = '" + DateTime.Now.ToString("yyyy-M-d") + "'";
+            string queryForCheckShift = "select shift_end from shift where shift_date = '" + DateTime.Now.ToString("yyyy-M-d") + "'";
             con.MysqlQuery(queryForCheckShift);
             result = con.QueryEx();
             for (int i = 0; i < result.Rows.Count; i++) { 
                 DataRow dr = result.Rows[i];
                 shiftend = dr["shift_end"].ToString();
-              //  shifNo = int.Parse(dr["shift_no"].ToString());
             }
 
-            if (result.Rows.Count==0)
+            if (result.Rows.Count == 0 || shiftend != "")
             {
-                shifNo = 1;
-                string q = "insert into shift (users_id,shift_date,shift_start,shift_no) values('" + SessionData.userid + "','" + DateTime.Now.ToString("yyyy-M-d") + "','" + DateTime.Now.ToString("t") + "','" + shifNo + "')";
-                con.MysqlQuery(q);
-                con.NonQueryEx();
-            }else if (result.Rows.Count > 0 && shiftend != "") {
-                shifNo = shifNo + 1;
+                //set shift No
+                if (shiftend != "")
+                {
+                    shifNo = result.Rows.Count + 1;
+                }
+                else {
+                    shifNo = 1;
+                }
+
+                //create a new shift
                 string q = "insert into shift (users_id,shift_date,shift_start,shift_no) values('" + SessionData.userid + "','" + DateTime.Now.ToString("yyyy-M-d") + "','" + DateTime.Now.ToString("t") + "','" + shifNo + "')";
                 con.MysqlQuery(q);
                 con.NonQueryEx();
