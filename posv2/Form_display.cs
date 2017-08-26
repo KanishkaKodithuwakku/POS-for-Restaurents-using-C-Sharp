@@ -77,7 +77,7 @@ namespace posv2
             for (int i = 0; i < result.Rows.Count; i++) { 
                 DataRow dr = result.Rows[i];
                 shiftend = dr["shift_end"].ToString();
-                shifNo = int.Parse(dr["shift_no"].ToString());
+              //  shifNo = int.Parse(dr["shift_no"].ToString());
             }
 
             if (result.Rows.Count==0)
