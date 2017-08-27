@@ -29,27 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_display));
             this.tab_control = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel_menue = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.btn_menuePanelHide = new System.Windows.Forms.Button();
             this.lbl_menueTitle = new System.Windows.Forms.Label();
+            this.btn_menuePanelHide = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_total_items = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
-            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -65,28 +64,33 @@
             this.lbl_service_charge = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_discount = new System.Windows.Forms.Label();
-            this.btn_menue = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.btn_product_search = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.btn_logout = new System.Windows.Forms.Button();
             this.btn_pay = new System.Windows.Forms.Button();
-            this.btn_down = new System.Windows.Forms.Button();
-            this.btn_up = new System.Windows.Forms.Button();
             this.btn_take_away = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.btn_void = new System.Windows.Forms.Button();
             this.btn_continue_order = new System.Windows.Forms.Button();
             this.btn_discount = new System.Windows.Forms.Button();
             this.btn_delete_item = new System.Windows.Forms.Button();
             this.btn_dine_in = new System.Windows.Forms.Button();
             this.dataGridView_cart = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.item_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.newitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_save = new System.Windows.Forms.Button();
+            this.btn_menue = new System.Windows.Forms.Button();
+            this.btn_void = new System.Windows.Forms.Button();
+            this.btn_product_search = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_void_from_allorders = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.txt_selected_orderid = new System.Windows.Forms.TextBox();
@@ -112,28 +116,24 @@
             this.cashdisplaySerialPort = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.item_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
+            this.btn_logout = new System.Windows.Forms.Button();
+            this.btn_down = new System.Windows.Forms.Button();
+            this.btn_up = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tab_control.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel_menue.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cart)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_control
@@ -209,6 +209,17 @@
             this.listView1.View = System.Windows.Forms.View.SmallIcon;
             this.listView1.Click += new System.EventHandler(this.listView1_Click);
             // 
+            // lbl_menueTitle
+            // 
+            this.lbl_menueTitle.AutoSize = true;
+            this.lbl_menueTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_menueTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lbl_menueTitle.Location = new System.Drawing.Point(0, 6);
+            this.lbl_menueTitle.Name = "lbl_menueTitle";
+            this.lbl_menueTitle.Size = new System.Drawing.Size(74, 13);
+            this.lbl_menueTitle.TabIndex = 1;
+            this.lbl_menueTitle.Text = "CATEGORY";
+            // 
             // btn_menuePanelHide
             // 
             this.btn_menuePanelHide.BackColor = System.Drawing.Color.Black;
@@ -222,17 +233,6 @@
             this.btn_menuePanelHide.Text = "Menu Back";
             this.btn_menuePanelHide.UseVisualStyleBackColor = false;
             this.btn_menuePanelHide.Click += new System.EventHandler(this.btn_menuePanelHide_Click);
-            // 
-            // lbl_menueTitle
-            // 
-            this.lbl_menueTitle.AutoSize = true;
-            this.lbl_menueTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_menueTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.lbl_menueTitle.Location = new System.Drawing.Point(0, 6);
-            this.lbl_menueTitle.Name = "lbl_menueTitle";
-            this.lbl_menueTitle.Size = new System.Drawing.Size(74, 13);
-            this.lbl_menueTitle.TabIndex = 1;
-            this.lbl_menueTitle.Text = "CATEGORY";
             // 
             // panel4
             // 
@@ -289,17 +289,6 @@
             this.lbl_total.Size = new System.Drawing.Size(54, 25);
             this.lbl_total.TabIndex = 8;
             this.lbl_total.Text = "0.00";
-            // 
-            // pictureBox_logo
-            // 
-            this.pictureBox_logo.Image = global::posv2.Properties.Resources.mpos;
-            this.pictureBox_logo.Location = new System.Drawing.Point(232, -19);
-            this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(82, 69);
-            this.pictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_logo.TabIndex = 33;
-            this.pictureBox_logo.TabStop = false;
-            this.pictureBox_logo.Click += new System.EventHandler(this.pictureBox_logo_Click);
             // 
             // label17
             // 
@@ -471,20 +460,6 @@
             this.lbl_discount.TabIndex = 6;
             this.lbl_discount.Text = "0%";
             // 
-            // btn_menue
-            // 
-            this.btn_menue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
-            this.btn_menue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_menue.Location = new System.Drawing.Point(10, 512);
-            this.btn_menue.Name = "btn_menue";
-            this.btn_menue.Size = new System.Drawing.Size(150, 60);
-            this.btn_menue.TabIndex = 28;
-            this.btn_menue.Text = "MENU";
-            this.btn_menue.UseVisualStyleBackColor = false;
-            this.btn_menue.Click += new System.EventHandler(this.btn_menue_Click_1);
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -497,24 +472,6 @@
             this.label22.TabIndex = 51;
             this.label22.Text = "(Open Main Menue)";
             // 
-            // btn_product_search
-            // 
-            this.btn_product_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(212)))));
-            this.btn_product_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_product_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_product_search.FlatAppearance.BorderSize = 0;
-            this.btn_product_search.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(169)))), ((int)(((byte)(53)))));
-            this.btn_product_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_product_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_product_search.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_product_search.Location = new System.Drawing.Point(175, 512);
-            this.btn_product_search.Name = "btn_product_search";
-            this.btn_product_search.Size = new System.Drawing.Size(150, 60);
-            this.btn_product_search.TabIndex = 43;
-            this.btn_product_search.Text = "PRODUCTS";
-            this.btn_product_search.UseVisualStyleBackColor = false;
-            this.btn_product_search.Click += new System.EventHandler(this.btn_product_search_Click);
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -526,24 +483,6 @@
             this.label19.Size = new System.Drawing.Size(105, 15);
             this.label19.TabIndex = 48;
             this.label19.Text = "(Search Products)";
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.BackColor = System.Drawing.Color.Silver;
-            this.btn_logout.BackgroundImage = global::posv2.Properties.Resources.ecommerce_collection_outlines_28_512;
-            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_logout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_logout.FlatAppearance.BorderSize = 0;
-            this.btn_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(220)))), ((int)(((byte)(65)))));
-            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_logout.Location = new System.Drawing.Point(679, 579);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(150, 60);
-            this.btn_logout.TabIndex = 56;
-            this.btn_logout.UseVisualStyleBackColor = false;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // btn_pay
             // 
@@ -562,45 +501,6 @@
             this.btn_pay.Text = "PAY";
             this.btn_pay.UseVisualStyleBackColor = false;
             this.btn_pay.Click += new System.EventHandler(this.btn_pay_Click);
-            // 
-            // btn_down
-            // 
-            this.btn_down.BackColor = System.Drawing.Color.White;
-            this.btn_down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_down.CausesValidation = false;
-            this.btn_down.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_down.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btn_down.FlatAppearance.BorderSize = 2;
-            this.btn_down.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btn_down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_down.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_down.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_down.Image = global::posv2.Properties.Resources.minus;
-            this.btn_down.Location = new System.Drawing.Point(590, 580);
-            this.btn_down.Name = "btn_down";
-            this.btn_down.Size = new System.Drawing.Size(74, 60);
-            this.btn_down.TabIndex = 54;
-            this.btn_down.UseVisualStyleBackColor = false;
-            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
-            // 
-            // btn_up
-            // 
-            this.btn_up.BackColor = System.Drawing.Color.White;
-            this.btn_up.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_up.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_up.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(54)))));
-            this.btn_up.FlatAppearance.BorderSize = 2;
-            this.btn_up.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(220)))), ((int)(((byte)(65)))));
-            this.btn_up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_up.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_up.Image = global::posv2.Properties.Resources.plus;
-            this.btn_up.Location = new System.Drawing.Point(512, 580);
-            this.btn_up.Name = "btn_up";
-            this.btn_up.Size = new System.Drawing.Size(74, 60);
-            this.btn_up.TabIndex = 53;
-            this.btn_up.UseVisualStyleBackColor = false;
-            this.btn_up.Click += new System.EventHandler(this.btn_up_Click);
             // 
             // btn_take_away
             // 
@@ -670,21 +570,6 @@
             this.label16.TabIndex = 46;
             this.label16.Text = "(Manager Only)";
             this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // btn_void
-            // 
-            this.btn_void.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(82)))), ((int)(((byte)(87)))));
-            this.btn_void.FlatAppearance.BorderSize = 0;
-            this.btn_void.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_void.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_void.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_void.Location = new System.Drawing.Point(175, 578);
-            this.btn_void.Name = "btn_void";
-            this.btn_void.Size = new System.Drawing.Size(150, 60);
-            this.btn_void.TabIndex = 45;
-            this.btn_void.Text = "VOID";
-            this.btn_void.UseVisualStyleBackColor = false;
-            this.btn_void.Click += new System.EventHandler(this.btn_void_Click);
             // 
             // btn_continue_order
             // 
@@ -783,6 +668,86 @@
             this.dataGridView_cart.TabIndex = 26;
             this.dataGridView_cart.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridView_cart_Scroll);
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.MinimumWidth = 2;
+            this.id.Name = "id";
+            this.id.Visible = false;
+            this.id.Width = 2;
+            // 
+            // itemcode
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemcode.DefaultCellStyle = dataGridViewCellStyle1;
+            this.itemcode.HeaderText = "ITEM CODE";
+            this.itemcode.Name = "itemcode";
+            this.itemcode.ReadOnly = true;
+            this.itemcode.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemcode.Width = 195;
+            // 
+            // itemname
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemname.DefaultCellStyle = dataGridViewCellStyle2;
+            this.itemname.HeaderText = "ITEM NAME";
+            this.itemname.Name = "itemname";
+            this.itemname.ReadOnly = true;
+            this.itemname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemname.Width = 250;
+            // 
+            // size
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.size.DefaultCellStyle = dataGridViewCellStyle3;
+            this.size.HeaderText = "SIZE";
+            this.size.Name = "size";
+            this.size.ReadOnly = true;
+            this.size.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // qty
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qty.DefaultCellStyle = dataGridViewCellStyle4;
+            this.qty.HeaderText = "QTY";
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
+            this.qty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // price
+            // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price.DefaultCellStyle = dataGridViewCellStyle5;
+            this.price.HeaderText = "PRICE";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.price.Width = 150;
+            // 
+            // subtotal
+            // 
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtotal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.subtotal.HeaderText = "SUB TOTAL";
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
+            this.subtotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.subtotal.Width = 150;
+            // 
+            // item_type
+            // 
+            this.item_type.HeaderText = "itemtype";
+            this.item_type.MinimumWidth = 2;
+            this.item_type.Name = "item_type";
+            this.item_type.Width = 2;
+            // 
+            // newitem
+            // 
+            this.newitem.HeaderText = "isnewitem";
+            this.newitem.MinimumWidth = 2;
+            this.newitem.Name = "newitem";
+            this.newitem.Width = 2;
+            // 
             // btn_save
             // 
             this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(54)))));
@@ -801,6 +766,53 @@
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // btn_menue
+            // 
+            this.btn_menue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
+            this.btn_menue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_menue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_menue.Location = new System.Drawing.Point(10, 512);
+            this.btn_menue.Name = "btn_menue";
+            this.btn_menue.Size = new System.Drawing.Size(150, 60);
+            this.btn_menue.TabIndex = 28;
+            this.btn_menue.Text = "MENU";
+            this.btn_menue.UseVisualStyleBackColor = false;
+            this.btn_menue.Click += new System.EventHandler(this.btn_menue_Click_1);
+            // 
+            // btn_void
+            // 
+            this.btn_void.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(82)))), ((int)(((byte)(87)))));
+            this.btn_void.FlatAppearance.BorderSize = 0;
+            this.btn_void.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_void.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_void.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_void.Location = new System.Drawing.Point(175, 578);
+            this.btn_void.Name = "btn_void";
+            this.btn_void.Size = new System.Drawing.Size(150, 60);
+            this.btn_void.TabIndex = 45;
+            this.btn_void.Text = "VOID";
+            this.btn_void.UseVisualStyleBackColor = false;
+            this.btn_void.Click += new System.EventHandler(this.btn_void_Click);
+            // 
+            // btn_product_search
+            // 
+            this.btn_product_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(212)))));
+            this.btn_product_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_product_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_product_search.FlatAppearance.BorderSize = 0;
+            this.btn_product_search.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(169)))), ((int)(((byte)(53)))));
+            this.btn_product_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_product_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_product_search.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_product_search.Location = new System.Drawing.Point(175, 512);
+            this.btn_product_search.Name = "btn_product_search";
+            this.btn_product_search.Size = new System.Drawing.Size(150, 60);
+            this.btn_product_search.TabIndex = 43;
+            this.btn_product_search.Text = "PRODUCTS";
+            this.btn_product_search.UseVisualStyleBackColor = false;
+            this.btn_product_search.Click += new System.EventHandler(this.btn_product_search_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -817,16 +829,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1010, 649);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "All Orders";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::posv2.Properties.Resources.mpos;
-            this.pictureBox1.Location = new System.Drawing.Point(6, -14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 82);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // btn_void_from_allorders
             // 
@@ -1103,85 +1105,83 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // id
+            // pictureBox_logo
             // 
-            this.id.HeaderText = "id";
-            this.id.MinimumWidth = 2;
-            this.id.Name = "id";
-            this.id.Visible = false;
-            this.id.Width = 2;
+            this.pictureBox_logo.Image = global::posv2.Properties.Resources.mpos;
+            this.pictureBox_logo.Location = new System.Drawing.Point(232, -19);
+            this.pictureBox_logo.Name = "pictureBox_logo";
+            this.pictureBox_logo.Size = new System.Drawing.Size(82, 69);
+            this.pictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_logo.TabIndex = 33;
+            this.pictureBox_logo.TabStop = false;
+            this.pictureBox_logo.Click += new System.EventHandler(this.pictureBox_logo_Click);
             // 
-            // itemcode
+            // btn_logout
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemcode.DefaultCellStyle = dataGridViewCellStyle1;
-            this.itemcode.HeaderText = "ITEM CODE";
-            this.itemcode.Name = "itemcode";
-            this.itemcode.ReadOnly = true;
-            this.itemcode.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemcode.Width = 195;
+            this.btn_logout.BackColor = System.Drawing.Color.Silver;
+            this.btn_logout.BackgroundImage = global::posv2.Properties.Resources.ecommerce_collection_outlines_28_512;
+            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            this.btn_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(220)))), ((int)(((byte)(65)))));
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_logout.Location = new System.Drawing.Point(679, 579);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(150, 60);
+            this.btn_logout.TabIndex = 56;
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
-            // itemname
+            // btn_down
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemname.DefaultCellStyle = dataGridViewCellStyle2;
-            this.itemname.HeaderText = "ITEM NAME";
-            this.itemname.Name = "itemname";
-            this.itemname.ReadOnly = true;
-            this.itemname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemname.Width = 250;
+            this.btn_down.BackColor = System.Drawing.Color.White;
+            this.btn_down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_down.CausesValidation = false;
+            this.btn_down.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_down.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_down.FlatAppearance.BorderSize = 2;
+            this.btn_down.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btn_down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_down.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_down.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_down.Image = global::posv2.Properties.Resources.minus;
+            this.btn_down.Location = new System.Drawing.Point(590, 580);
+            this.btn_down.Name = "btn_down";
+            this.btn_down.Size = new System.Drawing.Size(74, 60);
+            this.btn_down.TabIndex = 54;
+            this.btn_down.UseVisualStyleBackColor = false;
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
             // 
-            // size
+            // btn_up
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.size.DefaultCellStyle = dataGridViewCellStyle3;
-            this.size.HeaderText = "SIZE";
-            this.size.Name = "size";
-            this.size.ReadOnly = true;
-            this.size.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btn_up.BackColor = System.Drawing.Color.White;
+            this.btn_up.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_up.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_up.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(54)))));
+            this.btn_up.FlatAppearance.BorderSize = 2;
+            this.btn_up.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(220)))), ((int)(((byte)(65)))));
+            this.btn_up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_up.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_up.Image = global::posv2.Properties.Resources.plus;
+            this.btn_up.Location = new System.Drawing.Point(512, 580);
+            this.btn_up.Name = "btn_up";
+            this.btn_up.Size = new System.Drawing.Size(74, 60);
+            this.btn_up.TabIndex = 53;
+            this.btn_up.UseVisualStyleBackColor = false;
+            this.btn_up.Click += new System.EventHandler(this.btn_up_Click);
             // 
-            // qty
+            // pictureBox1
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qty.DefaultCellStyle = dataGridViewCellStyle4;
-            this.qty.HeaderText = "QTY";
-            this.qty.Name = "qty";
-            this.qty.ReadOnly = true;
-            this.qty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // price
-            // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price.DefaultCellStyle = dataGridViewCellStyle5;
-            this.price.HeaderText = "PRICE";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.price.Width = 150;
-            // 
-            // subtotal
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtotal.DefaultCellStyle = dataGridViewCellStyle6;
-            this.subtotal.HeaderText = "SUB TOTAL";
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
-            this.subtotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.subtotal.Width = 150;
-            // 
-            // item_type
-            // 
-            this.item_type.HeaderText = "itemtype";
-            this.item_type.MinimumWidth = 2;
-            this.item_type.Name = "item_type";
-            this.item_type.Width = 2;
-            // 
-            // newitem
-            // 
-            this.newitem.HeaderText = "isnewitem";
-            this.newitem.MinimumWidth = 2;
-            this.newitem.Name = "newitem";
-            this.newitem.Width = 2;
+            this.pictureBox1.Image = global::posv2.Properties.Resources.mpos;
+            this.pictureBox1.Location = new System.Drawing.Point(6, -14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 82);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // Form_display
             // 
@@ -1189,6 +1189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1020, 693);
+            this.ControlBox = false;
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.tab_control);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1204,7 +1205,6 @@
             this.panel_menue.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1212,12 +1212,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cart)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

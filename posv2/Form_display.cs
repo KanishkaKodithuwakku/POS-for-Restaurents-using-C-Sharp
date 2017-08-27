@@ -59,9 +59,9 @@ namespace posv2
 
             //MessageBox.Show(DateTime.Now.ToString("d-M-yyyy"));
            // MessageBox.Show(DateTime.Now.ToString("t"));
+            //MessageBox.Show(DateTime.Now.ToString("yyyyMMddHHmmss"));
            
             createShift();
-
         }
 
         void createShift() {
@@ -71,7 +71,7 @@ namespace posv2
             int shifNo = 0;
 
             //find shif end or not
-            string queryForCheckShift = "select shift_end from shift where shift_date = '" + DateTime.Now.ToString("yyyy-M-d") + "'";
+            string queryForCheckShift = "select shift_end,shift_start from shift where shift_date = '" + DateTime.Now.ToString("yyyy-M-d") + "' AND users_id = '"+SessionData.userid+"'";
             con.MysqlQuery(queryForCheckShift);
             result = con.QueryEx();
             for (int i = 0; i < result.Rows.Count; i++) { 
@@ -91,7 +91,7 @@ namespace posv2
                 }
 
                 //create a new shift
-                string q = "insert into shift (users_id,shift_date,shift_start,shift_no) values('" + SessionData.userid + "','" + DateTime.Now.ToString("yyyy-M-d") + "','" + DateTime.Now.ToString("t") + "','" + shifNo + "')";
+                string q = "insert into shift (users_id,shift_date,shift_start,shift_no) values('" + SessionData.userid + "','" + DateTime.Now.ToString("yyyy-M-d") + "','" + DateTime.Now.ToString("yyyyMMddHHmmss") + "','" + shifNo + "')";
                 con.MysqlQuery(q);
                 con.NonQueryEx();
             }
@@ -1184,6 +1184,7 @@ namespace posv2
         }
 
         public static bool logoutStatus=false;
+        
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             FormConfirmLogout frmcl = new FormConfirmLogout();

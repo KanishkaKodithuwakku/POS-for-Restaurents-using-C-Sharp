@@ -24,9 +24,11 @@ namespace posv2
         {
             
             if (textBox1.Text != "") {
+                SessionData.SetMd5PasswordToConvert(textBox1.Text);
+                string pass = SessionData.md5Password;
                 DataTable order;
                 con = new db();
-                string query = "SELECT * FROM `users` WHERE users.username='" + SessionData.user + "' AND users.password = '" + textBox1.Text + "' AND users.user_type= 'A'";
+                string query = "SELECT * FROM `users` WHERE users.username='" + SessionData.user + "' AND users.password = '" + pass + "' AND users.user_type= 'A'";
                 con.MysqlQuery(query);
                 order = con.QueryEx();
                 con.conClose();

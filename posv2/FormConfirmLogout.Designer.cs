@@ -28,10 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.switch_user = new System.Windows.Forms.Button();
             this.btn_doShoutDown = new System.Windows.Forms.Button();
             this.btn_doSleep = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(13, 119);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(387, 110);
+            this.panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::posv2.Properties.Resources.loading;
+            this.pictureBox1.Location = new System.Drawing.Point(133, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(97, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // switch_user
             // 
@@ -81,13 +104,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(412, 131);
-            this.Controls.Add(this.switch_user);
-            this.Controls.Add(this.btn_doShoutDown);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_doSleep);
+            this.Controls.Add(this.btn_doShoutDown);
+            this.Controls.Add(this.switch_user);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormConfirmLogout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormConfirmLogout";
+            this.Load += new System.EventHandler(this.FormConfirmLogout_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,5 +124,7 @@
         private System.Windows.Forms.Button btn_doSleep;
         private System.Windows.Forms.Button btn_doShoutDown;
         private System.Windows.Forms.Button switch_user;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -43,6 +43,8 @@ namespace posv2
             double servicePrice;
             string stward;
             string md5Password;
+            string tillOpenTime;
+            double openBalance;
 
 
             //Receipt = 1, Kot=2, Bot = 3
@@ -293,6 +295,18 @@ namespace posv2
             }
             md5Password = sb.ToString();
 
+        }
+
+        public static string tillOpenTime { get; private set; }
+        public static void SetTillOpenTime(string opentime)
+        {
+            tillOpenTime = opentime;
+        }
+
+        public static double openBalance { get; private set; }
+        public static void SetTillOpenBalance(double opbalence)
+        {
+            openBalance = opbalence;
         }
 
 
