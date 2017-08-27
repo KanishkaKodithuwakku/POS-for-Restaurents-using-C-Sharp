@@ -29,14 +29,14 @@ namespace posv2
             double change;
             double payamount;
             double billamount;
-            int guest;
+            int guest, shiftno;
             string tabel = "";
             long newOrderId;
             int orderType = 0;
             bool cashdisplayon = true;
             string cardname;
             string cardtype;
-            int cardlastdigits;
+            int cardlastdigits, shiftId;
             int paymentType;
             double lastbillamout;
             double discountedPrice;
@@ -308,6 +308,19 @@ namespace posv2
         {
             openBalance = opbalence;
         }
+
+        public static int shiftId { get; private set; }
+        public static void SetUserShiftId(int shifti)
+        {
+            shiftId = shifti;
+        }
+
+        public static int shiftno { get; private set; }
+        public static void SetUserShiftNo(int shiftNumber)
+        {
+            shiftno = shiftNumber;
+        }
+
 
 
 

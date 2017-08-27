@@ -71,13 +71,20 @@ namespace posv2
             int shifNo = 0;
 
             //find shif end or not
-            string queryForCheckShift = "select shift_end,shift_start from shift where shift_date = '" + DateTime.Now.ToString("yyyy-M-d") + "' AND users_id = '"+SessionData.userid+"'";
+            string queryForCheckShift = "select id,shift_end,shift_start from shift where shift_date = '" + DateTime.Now.ToString("yyyy-M-d") + "'";
             con.MysqlQuery(queryForCheckShift);
             result = con.QueryEx();
-            for (int i = 0; i < result.Rows.Count; i++) { 
-                DataRow dr = result.Rows[i];
-                shiftend = dr["shift_end"].ToString();
+
+            if (result.Rows.Count > 0) {
+                
+                for (int i = 0; i < result.Rows.Count; i++)
+                {
+                    DataRow dr = result.Rows[i];
+                    shiftend = dr["shift_end"].ToString();
+                }
             }
+
+            
 
             if (result.Rows.Count == 0 || shiftend != "")
             {
@@ -93,7 +100,14 @@ namespace posv2
                 //create a new shift
                 string q = "insert into shift (users_id,shift_date,shift_start,shift_no) values('" + SessionData.userid + "','" + DateTime.Now.ToString("yyyy-M-d") + "','" + DateTime.Now.ToString("yyyyMMddHHmmss") + "','" + shifNo + "')";
                 con.MysqlQuery(q);
-                con.NonQueryEx();
+                long shiftid = con.NonQueryEx();
+                SessionData.SetUserShiftId(int.Parse(shiftid.ToString()));
+
+                DataTable shiftno;
+                string queryshiftno = "SELECT shift.shift_no FROM shift WHERE shift.id ='"+SessionData.shiftId+"' ";
+                con.MysqlQuery(queryshiftno);
+                shiftno = con.QueryEx();
+                SessionData.SetUserShiftNo(int.Parse(shiftno.Rows[0][0].ToString()));
             }
          
 
@@ -335,12 +349,18 @@ namespace posv2
         private void gridviewDataIntoDb()
         {
             db con = new db();
+            DataTable shift;
+            //get shift
+            string queryshift = "SELECT shift.id,shift.users_id,users.username,shift.shift_no FROM `shift` JOIN users ON users.id = shift.users_id WHERE shift.shift_end IS NULL ORDER BY shift.id DESC LIMIT 1";
+            con.MysqlQuery(queryshift);
+            shift = con.QueryEx();
+
             for (int i = 0; i < dataGridView_cart.Rows.Count; i++)
             {
                 //inset only new items
                 if (dataGridView_cart.Rows[i].Cells["newitem"].Value.Equals(1))
                 {
-                    con.MysqlQuery("INSERT INTO order_details (order_id,product_id,size,qty,unit_price,kot_status,subtotal,item_type) VALUES('" + SessionData.newOrderId + "','" + dataGridView_cart.Rows[i].Cells["itemcode"].Value.ToString() + "','" + dataGridView_cart.Rows[i].Cells["size"].Value.ToString() + "','" + dataGridView_cart.Rows[i].Cells["qty"].Value.ToString() + "','" + double.Parse(dataGridView_cart.Rows[i].Cells["price"].Value.ToString()) + "','" + 0 + "','" + double.Parse(dataGridView_cart.Rows[i].Cells["subtotal"].Value.ToString()) + "','" + dataGridView_cart.Rows[i].Cells["item_type"].Value.ToString() + "');");
+                    con.MysqlQuery("INSERT INTO order_details (order_id,product_id,size,qty,unit_price,kot_status,subtotal,item_type,shift_id,shift_no) VALUES('" + SessionData.newOrderId + "','" + dataGridView_cart.Rows[i].Cells["itemcode"].Value.ToString() + "','" + dataGridView_cart.Rows[i].Cells["size"].Value.ToString() + "','" + dataGridView_cart.Rows[i].Cells["qty"].Value.ToString() + "','" + double.Parse(dataGridView_cart.Rows[i].Cells["price"].Value.ToString()) + "','" + 0 + "','" + double.Parse(dataGridView_cart.Rows[i].Cells["subtotal"].Value.ToString()) + "','" + dataGridView_cart.Rows[i].Cells["item_type"].Value.ToString() + "','" + SessionData.shiftId + "','" + SessionData.shiftno + "');");
                     con.NonQueryEx();
                 }
             }

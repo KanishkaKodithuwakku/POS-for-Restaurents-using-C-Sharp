@@ -14,10 +14,78 @@ namespace posv2
     {
         private db con;
         private string errormsg = "";
+        double totalSale,totalDiscount,totalServiceCharge;
+        DataTable allcardsale,voidItems,categorySale;
+        int guestCount;
         public Form_login()
         {
             InitializeComponent();
         }
+
+        //zreport data
+
+        //today total sale
+        void getTotalSale(){
+            DataTable result;
+            con = new db();
+            string query = "SELECT (IF(SUM(order_details.subtotal)>0,FORMAT(SUM(order_details.subtotal),2),FORMAT(0,2))) AS totalsale FROM `order_details` WHERE date(order_details.added) = date(CURDATE())";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            totalSale = double.Parse(result.Rows[0][0].ToString()); 
+        }
+
+        //card wise sale
+        void getCardwiseSale() {
+            DataTable result;
+            con = new db();
+            string query = "SELECT COUNT(order_details.id) AS itemcount,(SUM(order_details.subtotal)) AS cardsale, (IF(paymentdetails.cardtype='','CASH',paymentdetails.cardtype)) AS cardtype FROM order_details JOIN orders ON orders.id=order_details.order_id JOIN paymentdetails ON paymentdetails.orders_id = order_details.order_id WHERE date(order_details.added) = CURDATE() GROUP BY paymentdetails.cardtype";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            allcardsale = result;
+        }
+
+        //get void items
+        void getVoidItems() {
+            DataTable result;
+            con = new db();
+            string query = "SELECT products.name,order_details.qty,order_details.subtotal FROM `order_details` JOIN products ON products.id = order_details.product_id WHERE date(order_details.added) = date(CURDATE()) AND order_details.online = 0 ";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            voidItems = result;
+        }
+
+        //get category sale
+        void getCategorySale() {
+            DataTable result;
+            con = new db();
+            string query = "SELECT SUM(order_details.subtotal) AS sale,categories.name, COUNT(order_details.product_id) AS itemcount FROM order_details JOIN products ON products.id = order_details.product_id JOIN categories ON categories.id = products.category_id WHERE date(order_details.added) = CURDATE() GROUP BY categories.id";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            categorySale = result;
+        }
+
+        //get guest count
+        void getGuestCount()
+        {
+            DataTable result;
+            con = new db();
+            string query = "SELECT SUM(orders.guest) AS guestcount FROM order_details JOIN orders ON orders.id = order_details.order_id WHERE date(order_details.added) = date(CURDATE())";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            guestCount = int.Parse(result.Rows[0][0].ToString());
+        }
+
+        //get total discount and servicecharge
+
+
+
+
+
 
         public static bool switcheUser = false;
         private void btn_login_Click(object sender, EventArgs e)
@@ -55,6 +123,11 @@ namespace posv2
         }
 
 
+
+
+
+
+
         private int CheckUserAvailabel()
         {
             con = new db();
@@ -78,10 +151,18 @@ namespace posv2
                 SessionData.setUser(users.Rows[0][1].ToString());
                 SessionData.SetTillOpenBalance(5000);
                 SessionData.SetTillOpenTime(DateTime.Now.ToString("yyyyMMddHHmmss"));
-                string shiftQuery = "SELECT shift.id,shift.users_id,users.username FROM `shift` JOIN users ON users.id = shift.users_id WHERE shift.shift_end IS NULL ORDER BY shift.id DESC LIMIT 1";
+                string shiftQuery = "SELECT shift.id,shift.users_id,users.username,shift.shift_no FROM `shift` JOIN users ON users.id = shift.users_id WHERE shift.shift_end IS NULL ORDER BY shift.id DESC LIMIT 1";
                 con.MysqlQuery(shiftQuery);
                 shift = con.QueryEx();
                 con.conClose();
+
+                //set shift
+                if (shift.Rows.Count > 0) {
+                    SessionData.SetUserShiftId(int.Parse(shift.Rows[0][0].ToString()));
+                    SessionData.SetUserShiftNo(int.Parse(shift.Rows[0][3].ToString()));
+                }
+
+
                 if (shift.Rows.Count > 0 && shift.Rows[0][1].ToString() != SessionData.userid)
                 {
                     errormsg = "Previous Shift (" + shift.Rows[0][2].ToString() + ") was not closed. could not start a new shift for (" + SessionData.user + "). please signout last shift.";
