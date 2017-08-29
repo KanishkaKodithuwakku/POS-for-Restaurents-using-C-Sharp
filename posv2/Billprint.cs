@@ -66,8 +66,10 @@ namespace posv2
 
         }
 
+        string receiptTitle = "";
         public Billprint(List<Receipt> datasource,double billa, string guesttabel,int preprint)
         {
+            receiptTitle = "Payment Receipt";
             _list = datasource;
             this.tabel = guesttabel;
             this.billamount = billa;
@@ -75,6 +77,7 @@ namespace posv2
         }
         public Billprint(List<Receipt> datasource, double ccash, double billa, string guesttabel,double customerbalance)
         {
+            receiptTitle = "Customer Bill";
             _list = datasource;
             this.billamount = billa;
             this.tabel = guesttabel;
@@ -118,18 +121,24 @@ namespace posv2
             //heder start
 
             //logo
-            Image photo = Image.FromFile(@"c:/xampp/htdocs/mpos/images/mpos.png");
+            Image photo = Image.FromFile(@"c:/xampp/htdocs/mpos/images/logo.jpg");
             //print logo if neccessary
-            //graphics.DrawImage(photo, 10, -60);
+            graphics.DrawImage(photo,117,0);
 
 
-            Offset = Offset + 5;
-            graphics.DrawString("Heritage Cafe", new Font("Courier New", 14),
+            Offset = Offset + 65;
+            graphics.DrawString("The Heritage Cafe & Bistro", new Font("Courier New", 12),
+                                new SolidBrush(Color.Red), 0, startY + Offset);
+            Offset = Offset + 20;
+            graphics.DrawString("61, Pedlar Street, Galle", new Font("Courier New", 9),
                                 new SolidBrush(Color.Red), 50, startY + Offset);
-            Offset = Offset + 20;
-            graphics.DrawString("xxxx-xxx-xxx", new Font("Courier New", 10),
+            Offset = Offset + 15;
+            graphics.DrawString("80000, Sri Lanka", new Font("Courier New", 9),
                                 new SolidBrush(Color.Red), 70, startY + Offset);
-            Offset = Offset + 20;
+            Offset = Offset + 15;
+            graphics.DrawString("+94 77 142 1157", new Font("Courier New", 8),
+                                new SolidBrush(Color.Red), 70, startY + Offset);
+            Offset = Offset + 25;
 
             if (this.tabel == "TAKEAWAY")
             {
@@ -274,15 +283,42 @@ namespace posv2
             Offset = Offset + 20;
 
             String DrawnBy = "";
-            graphics.DrawString("Thank You Come Again! ", new Font(customfont, 8),
-                     new SolidBrush(Color.Black),50, startY + Offset);
+            graphics.DrawString("Thank You & Come Again! ", new Font(customfont, 10),
+                     new SolidBrush(Color.Black),40, startY + Offset);
+            Offset = Offset + 10;
+            graphics.DrawString("Keep in Touch with Us ", new Font(customfont,10),
+                     new SolidBrush(Color.Black), 52, startY + Offset);
 
             Offset = Offset + 10;
-            graphics.DrawString("Powered by Mcreatives", new Font(customfont, 8),
-                     new SolidBrush(Color.Black), 50, startY + Offset);
-            Offset = Offset + 10;
-            graphics.DrawString("+94 117 - 208 375", new Font(customfont, 8),
-                     new SolidBrush(Color.Black),55, startY + Offset);
+            graphics.DrawString("******************", new Font(customfont, 10),
+                     new SolidBrush(Color.Black), 52, startY + Offset);
+
+            Offset = Offset + 15;
+            graphics.DrawString(underLine, new Font(customfont, 10),
+                    new SolidBrush(Color.Black), startX, startY + Offset);
+
+            Offset = Offset + 25;
+            graphics.DrawString("Facebook : The-Heritage-Cafe-Bistro", new Font(customfont, 8),
+                     new SolidBrush(Color.Black), 0, startY + Offset);
+
+            Offset = Offset + 15;
+            graphics.DrawString("Web : http://heritagecafeandbistro.com", new Font(customfont, 8),
+                     new SolidBrush(Color.Black), 0, startY + Offset);
+
+            Offset = Offset + 15;
+            graphics.DrawString("Mail : info@heritagecafe.com", new Font(customfont, 8),
+                     new SolidBrush(Color.Black), 0, startY + Offset);
+
+
+
+
+
+            Offset = Offset + 20;
+            graphics.DrawString("© mPOS |  +94 117 - 208 375", new Font(customfont, 8),
+                     new SolidBrush(Color.Black), 0, startY + Offset);
+            //Offset = Offset + 10;
+            //graphics.DrawString("+94 117 - 208 375", new Font(customfont, 8),
+            //         new SolidBrush(Color.Black),55, startY + Offset);
             Offset = Offset + 10;
             
             

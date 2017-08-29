@@ -119,6 +119,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receipt.cs" />
     <Compile Include="SessionData.cs" />
+    <Compile Include="Xreport.cs" />
     <Compile Include="Zreport.cs" />
     <EmbeddedResource Include="Discount.resx">
       <DependentUpon>Discount.cs</DependentUpon>

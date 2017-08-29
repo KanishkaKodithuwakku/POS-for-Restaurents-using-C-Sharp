@@ -14,12 +14,13 @@ namespace posv2
     {
         private db con;
         private string errormsg = "";
-        double totalSale,totalDiscount,totalServiceCharge;
-        DataTable allcardsale,voidItems,categorySale;
-        int guestCount;
+        double _totalSale,_totalDiscount,_totalServiceCharge,_totalcardsale,_totalcashsale;
+        DataTable _cardWiseSale, _voidItems, _categorySale, _cardSaleShift, _cashSaleShift;
+        int _guestCount;
         public Form_login()
         {
             InitializeComponent();
+            
         }
 
         //zreport data
@@ -28,22 +29,23 @@ namespace posv2
         void getTotalSale(){
             DataTable result;
             con = new db();
-            string query = "SELECT (IF(SUM(order_details.subtotal)>0,FORMAT(SUM(order_details.subtotal),2),FORMAT(0,2))) AS totalsale FROM `order_details` WHERE date(order_details.added) = date(CURDATE())";
+            string query = "SELECT (IF(SUM(order_details.subtotal)>0,FORMAT(SUM(order_details.subtotal),2),FORMAT(0,2))) AS totalsale FROM `order_details` WHERE date(order_details.added) = date(CURDATE()) AND order_details.online=1";
             con.MysqlQuery(query);
             result = con.QueryEx();
             con.conClose();
-            totalSale = double.Parse(result.Rows[0][0].ToString()); 
+            _totalSale = double.Parse(result.Rows[0][0].ToString()); 
+            
         }
 
         //card wise sale
         void getCardwiseSale() {
             DataTable result;
             con = new db();
-            string query = "SELECT COUNT(order_details.id) AS itemcount,(SUM(order_details.subtotal)) AS cardsale, (IF(paymentdetails.cardtype='','CASH',paymentdetails.cardtype)) AS cardtype FROM order_details JOIN orders ON orders.id=order_details.order_id JOIN paymentdetails ON paymentdetails.orders_id = order_details.order_id WHERE date(order_details.added) = CURDATE() GROUP BY paymentdetails.cardtype";
+            string query = "SELECT COUNT(order_details.id) AS itemcount,(SUM(order_details.subtotal)) AS cardsale, (IF(paymentdetails.cardtype='','CASH',paymentdetails.cardtype)) AS cardtype FROM order_details JOIN orders ON orders.id=order_details.order_id JOIN paymentdetails ON paymentdetails.orders_id = order_details.order_id WHERE date(order_details.added) = CURDATE() AND order_details.online = 1 GROUP BY paymentdetails.cardtype ";
             con.MysqlQuery(query);
             result = con.QueryEx();
             con.conClose();
-            allcardsale = result;
+            _cardWiseSale = result;
         }
 
         //get void items
@@ -54,18 +56,18 @@ namespace posv2
             con.MysqlQuery(query);
             result = con.QueryEx();
             con.conClose();
-            voidItems = result;
+            _voidItems = result;
         }
 
         //get category sale
         void getCategorySale() {
             DataTable result;
             con = new db();
-            string query = "SELECT SUM(order_details.subtotal) AS sale,categories.name, COUNT(order_details.product_id) AS itemcount FROM order_details JOIN products ON products.id = order_details.product_id JOIN categories ON categories.id = products.category_id WHERE date(order_details.added) = CURDATE() GROUP BY categories.id";
+            string query = "SELECT SUM(order_details.subtotal) AS sale,categories.name, COUNT(order_details.product_id) AS itemcount FROM order_details JOIN products ON products.id = order_details.product_id JOIN categories ON categories.id = products.category_id WHERE date(order_details.added) = CURDATE() AND order_details.online = 1 GROUP BY categories.id";
             con.MysqlQuery(query);
             result = con.QueryEx();
             con.conClose();
-            categorySale = result;
+            _categorySale = result;
         }
 
         //get guest count
@@ -73,18 +75,84 @@ namespace posv2
         {
             DataTable result;
             con = new db();
-            string query = "SELECT SUM(orders.guest) AS guestcount FROM order_details JOIN orders ON orders.id = order_details.order_id WHERE date(order_details.added) = date(CURDATE())";
+            string query = "SELECT (IF(SUM(orders.guest) IS NULL,0,SUM(orders.guest))) AS guestcount FROM order_details JOIN orders ON orders.id = order_details.order_id WHERE date(order_details.added) = date(CURDATE())";
             con.MysqlQuery(query);
             result = con.QueryEx();
             con.conClose();
-            guestCount = int.Parse(result.Rows[0][0].ToString());
+
+            if (result == null)
+            {
+                _guestCount = 0;
+            }
+            else {
+                _guestCount = int.Parse(result.Rows[0][0].ToString());
+            }
+            
         }
 
         //get total discount and servicecharge
 
 
+        //card sale shift
+        void getCardSaleShift() {
+            DataTable result;
+            con = new db();
+            string query = "SELECT DISTINCT order_details.shift_no, (SELECT group_concat(DISTINCT order_details.order_id) FROM order_details) as order_id, (SELECT SUM(od.subtotal) FROM order_details od JOIN paymentdetails p WHERE date(od.added) = date(CURDATE()) AND od.online = 1 AND od.shift_no = order_details.shift_no AND p.orders_id = od.order_id) AS cardsale FROM order_details JOIN paymentdetails WHERE order_details.online = 1 AND paymentdetails.orders_id = order_details.order_id AND date(order_details.added) = date(CURDATE())";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            _cardSaleShift = result;
+        }
 
+        //cash sale shift
+        void getCashSaleShift()
+        {
+            DataTable result;
+            con = new db();
+            string query = "SELECT DISTINCT order_details.shift_no, (SELECT group_concat(DISTINCT order_details.order_id) FROM order_details) as order_id, (SELECT SUM(od.subtotal) FROM order_details od LEFT JOIN paymentdetails p ON p.orders_id = od.order_id WHERE date(od.added) = date(CURDATE()) AND od.online = 1  AND od.shift_no = order_details.shift_no AND p.orders_id IS NULL) AS cardsale FROM order_details LEFT JOIN paymentdetails ON paymentdetails.orders_id = order_details.order_id WHERE paymentdetails.orders_id IS NULL AND order_details.online = 1 AND date(order_details.added) = date(CURDATE())";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            _cashSaleShift = result;
+        }
 
+        //total cash
+        void getCashSale()
+        {
+            DataTable result;
+            con = new db();
+            string query = "SELECT DISTINCT order_details.shift_no, (SELECT group_concat(DISTINCT order_details.order_id) FROM order_details) as order_id, (SELECT SUM(od.subtotal) FROM order_details od LEFT JOIN paymentdetails p ON p.orders_id = od.order_id WHERE date(od.added) = date(CURDATE()) AND od.online = 1  AND od.shift_no = order_details.shift_no AND p.orders_id IS NULL) AS cardsale FROM order_details LEFT JOIN paymentdetails ON paymentdetails.orders_id = order_details.order_id WHERE paymentdetails.orders_id IS NULL AND order_details.online = 1 AND date(order_details.added) = date(CURDATE())";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+
+            if (result != null) {
+                foreach (DataRow cash in result.Rows)
+                {
+                    _totalcashsale = _totalcashsale + double.Parse(cash["cardsale"].ToString());
+                }
+            }
+        }
+
+        void getTotaldiscount() {
+            DataTable result;
+            con = new db();
+            string query = "SELECT (IF(SUM(discount_price)IS NULL,0,SUM(discount_price))) AS total_discount_price FROM (SELECT (SUM(order_details.subtotal) * orders.discount/100) AS discount_price FROM `order_details` JOIN orders WHERE order_details.order_id = orders.id AND date(order_details.added) = date(CURDATE()) GROUP BY order_details.order_id ) T";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            _totalDiscount = double.Parse(result.Rows[0][0].ToString());
+        }
+
+        void getTotalServicecharge() {
+            DataTable result;
+            con = new db();
+            string query = "SELECT (IF(SUM(serviceCharge)IS NULL,0,SUM(serviceCharge))) AS total_service_charge FROM (SELECT (SUM(order_details.subtotal) * orders.service_charge/100) AS serviceCharge FROM `order_details` JOIN orders WHERE order_details.order_id = orders.id AND date(order_details.added) = date(CURDATE()) GROUP BY order_details.order_id ) T";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            _totalServiceCharge = double.Parse(result.Rows[0][0].ToString());
+        }
 
 
         public static bool switcheUser = false;
@@ -107,7 +175,18 @@ namespace posv2
                     this.WindowState = FormWindowState.Normal;
                 }else {
                     //genarate z report
-                    Zreport zreport = new Zreport();
+                    getTotalSale();
+                    getCardwiseSale();
+                    getVoidItems();
+                    getCategorySale();
+                    getGuestCount();
+                    getCardSaleShift();
+                    getCashSaleShift();
+                    getCashSale();
+                    getTotaldiscount();
+                    getTotalServicecharge();
+
+                    Zreport zreport = new Zreport(_guestCount, _totalSale,_totalDiscount,_totalServiceCharge, _totalcardsale, _totalcashsale, _cardWiseSale, _cardSaleShift, _cashSaleShift, _voidItems, _categorySale);
                     zreport.print("POS-80Series");
                     this.Close();  
                 }
@@ -149,8 +228,8 @@ namespace posv2
                 SessionData.SetUserId(users.Rows[0][0].ToString());
                 SessionData.setauthType(users.Rows[0][2].ToString());
                 SessionData.setUser(users.Rows[0][1].ToString());
-                SessionData.SetTillOpenBalance(5000);
-                SessionData.SetTillOpenTime(DateTime.Now.ToString("yyyyMMddHHmmss"));
+                SessionData.SetTillOpenBalance(50000);
+                SessionData.SetTillOpenTime(DateTime.Now.ToString("HH:mm:ss"));
                 string shiftQuery = "SELECT shift.id,shift.users_id,users.username,shift.shift_no FROM `shift` JOIN users ON users.id = shift.users_id WHERE shift.shift_end IS NULL ORDER BY shift.id DESC LIMIT 1";
                 con.MysqlQuery(shiftQuery);
                 shift = con.QueryEx();

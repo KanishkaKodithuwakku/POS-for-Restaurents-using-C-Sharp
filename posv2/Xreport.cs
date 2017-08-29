@@ -8,11 +8,11 @@ using System.Data;
 
 namespace posv2
 {
-    public class Zreport
+    public class Xreport
     {
         PrintDocument pdoc = null;
         int _guestcount;
-        double _totalsale, _totalcardsale, _totalcashsale,_totalDiscount,_totalServiceCharge ;
+        double _totalsale, _totalcardsale, _totalcashsale;
         DataTable _cardwisesale, _totalshiftcardsale, _totalshiftcashsale, _voiditems, _categorysale;
 
         public double TotalSale
@@ -39,7 +39,7 @@ namespace posv2
             get { return this._totalcashsale; }
         }
 
-        
+
 
         public DataTable CardWiseSale
         {
@@ -93,24 +93,8 @@ namespace posv2
             get { return this._guestcount; }
         }
 
-        public double Discount
-        {
-            //set the total discout
-            set { this._totalDiscount = value; }
-            //get the total discout
-            get { return this._totalDiscount; }
-        }
 
-        public double ServiceCharge
-        {
-            //set the total service chage
-            set { this._totalServiceCharge = value; }
-            //get the total service chage
-            get { return this._totalServiceCharge; }
-        }
-
-
-        public Zreport(int guestCount, double totalSale,double discount,double service, double totalcardsale, double totalcashsale, DataTable cardWiseSale, DataTable cardSaleByShift, DataTable cashSaleByShift, DataTable voidItems, DataTable categorySale)
+        public Xreport(int guestCount, double totalSale, double totalcardsale, double totalcashsale, DataTable cardWiseSale, DataTable cardSaleByShift, DataTable cashSaleByShift, DataTable voidItems, DataTable categorySale)
         {
             _guestcount = guestCount;
             _totalsale = totalSale;
@@ -121,12 +105,10 @@ namespace posv2
             _voiditems = voidItems;
             _cardwisesale = cardWiseSale;
             _categorysale = categorySale;
-            _totalDiscount = discount;
-            _totalServiceCharge = service;
         }
 
 
-        
+
         public void print(string printer)
         {
             PrintDocument pdoc = new PrintDocument();
@@ -169,7 +151,7 @@ namespace posv2
             graphics.DrawString("Heritage Cafe & Bistro", new Font("Courier New", 14),
                                 new SolidBrush(Color.Red), 0, startY + Offset);
             Offset = Offset + 20;
-            graphics.DrawString("Z-Report", new Font("Courier New", 12),
+            graphics.DrawString("X-Report", new Font("Courier New", 12),
                                 new SolidBrush(Color.Red), 70, startY + Offset);
             Offset = Offset + 20;
             //Report date
@@ -183,50 +165,50 @@ namespace posv2
 
 
             //Till Open Time
-            graphics.DrawString("Till Open Time ",
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), startX, startY + Offset);
-            graphics.DrawString(SessionData.tillOpenTime,
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), 150, startY + Offset);
+            //graphics.DrawString("Till Open Time ",
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), startX, startY + Offset);
+            //graphics.DrawString(SessionData.tillOpenTime,
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), 150, startY + Offset);
             //Till Open Time
-            Offset = Offset + 15;
-            graphics.DrawString("Till Closed Time ",
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), startX, startY + Offset);
-            graphics.DrawString(DateTime.Now.ToString("HH:mm:ss"),
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), 150, startY + Offset);
+            //Offset = Offset + 15;
+            //graphics.DrawString("Till Closed Time ",
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), startX, startY + Offset);
+            //graphics.DrawString(DateTime.Now.ToString("HH:mm:ss"),
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), 150, startY + Offset);
             //Till closing balance
-            Offset = Offset + 25;
+          //  Offset = Offset + 25;
 
 
 
 
 
-            graphics.DrawString("Till Open Balance ",
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), startX, startY + Offset);
+            //graphics.DrawString("Till Open Balance ",
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), startX, startY + Offset);
             //Till close time
-            Offset = Offset + 15;
-            graphics.DrawString(String.Format("{0:n}", SessionData.openBalance),
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), 50, startY + Offset);
+            //Offset = Offset + 15;
+            //graphics.DrawString(String.Format("{0:n}", SessionData.openBalance),
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), 50, startY + Offset);
             //Till close time
-            Offset = Offset + 15;
+            //Offset = Offset + 15;
 
 
 
-            graphics.DrawString("Till Closing Balance ",
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), startX, startY + Offset);
+            //graphics.DrawString("Till Closing Balance ",
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), startX, startY + Offset);
             //Cashier
-            Offset = Offset + 15;
-            graphics.DrawString(String.Format("{0:n}", SessionData.openBalance + _totalcashsale),
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), 50, startY + Offset);
+            //Offset = Offset + 15;
+            //graphics.DrawString(String.Format("{0:n}", SessionData.openBalance + _totalcashsale),
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), 50, startY + Offset);
             //Cashier
-            Offset = Offset + 25;
+           // Offset = Offset + 25;
 
 
 
@@ -254,7 +236,7 @@ namespace posv2
                      new SolidBrush(Color.Black), startX, startY + Offset);
 
             Offset = Offset + 10;
-            if (_cardwisesale.Rows !=null)
+            if (_cardwisesale.Rows != null)
             {
 
                 Offset = Offset + 5;
@@ -280,7 +262,7 @@ namespace posv2
                 }
             }
 
-       
+
             graphics.DrawString(underLine, new Font(customfont, 10),
                      new SolidBrush(Color.Black), startX, startY + Offset);
             //End cardwise sale
@@ -302,14 +284,14 @@ namespace posv2
                      new Font(customfont, 10),
                      new SolidBrush(Color.Black), startX, startY + Offset);
 
-            
+
             Offset = Offset + 15;
             //shifts
             if (_totalshiftcardsale != null)
             {
                 foreach (DataRow cardsaleRows in _totalshiftcardsale.Rows)
                 {
-                    graphics.DrawString("Shift  "+cardsaleRows["shift_no"].ToString(),
+                    graphics.DrawString("Shift  " + cardsaleRows["shift_no"].ToString(),
                              new Font(customfont, 10),
                              new SolidBrush(Color.Black), 30, startY + Offset);
 
@@ -348,19 +330,19 @@ namespace posv2
             }
 
 
-         
-            
+
+
 
 
             //shifts
-            if (_totalshiftcashsale !=null)
+            if (_totalshiftcashsale != null)
             {
                 foreach (DataRow cashsaleRows in _totalshiftcashsale.Rows)
                 {
 
                 }
             }
-            
+
 
             Offset = Offset + 15;
             graphics.DrawString(underLine, new Font(customfont, 10),
@@ -378,7 +360,7 @@ namespace posv2
             //Void Items
             if (_voiditems != null)
             {
-                Offset = Offset +10;
+                Offset = Offset + 10;
                 graphics.DrawString("Item",
                         new Font(customfont, 10),
                         new SolidBrush(Color.Black), startX, startY + Offset);
@@ -416,85 +398,64 @@ namespace posv2
             //------------------------------------------------------------------------
 
             //Title Department Sale
-            Offset = Offset + 15;
-            graphics.DrawString("Department Sale", new Font("Courier New", 12),
-                                new SolidBrush(Color.Red), 50, startY + Offset);
-            Offset = Offset + 25;
-            graphics.DrawString(underLine, new Font(customfont, 10),
-                     new SolidBrush(Color.Black), startX, startY + Offset);
+            //Offset = Offset + 15;
+            //graphics.DrawString("Department Sale", new Font("Courier New", 12),
+            //                    new SolidBrush(Color.Red), 50, startY + Offset);
+            //Offset = Offset + 25;
+            //graphics.DrawString(underLine, new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), startX, startY + Offset);
 
 
             //Category wise sale
-            if (_categorysale != null)
-            {
-                Offset = Offset + 10;
-                graphics.DrawString("Category",
-                        new Font(customfont, 10),
-                        new SolidBrush(Color.Black), startX, startY + Offset);
+            //if (_categorysale != null)
+            //{
+            //    Offset = Offset + 10;
+            //    graphics.DrawString("Category",
+            //            new Font(customfont, 10),
+            //            new SolidBrush(Color.Black), startX, startY + Offset);
 
-                graphics.DrawString("Sale",
-                        new Font(customfont, 10),
-                        new SolidBrush(Color.Black), 110, startY + Offset);
+            //    graphics.DrawString("Sale",
+            //            new Font(customfont, 10),
+            //            new SolidBrush(Color.Black), 110, startY + Offset);
 
 
-                graphics.DrawString("Item Count",
-                       new Font(customfont, 10),
-                       new SolidBrush(Color.Black), 170, startY + Offset);
-                Offset = Offset + 15;
-                foreach (DataRow catRows in _categorysale.Rows)
-                {
-                    Offset = Offset + 15;
-                    graphics.DrawString(catRows["name"].ToString(),
-                             new Font(customfont, 10),
-                             new SolidBrush(Color.Black), startX, startY + Offset);
-                    Offset = Offset + 15;
-                    graphics.DrawString(String.Format("{0:n}", catRows["sale"]),
-                            new Font(customfont, 10),
-                            new SolidBrush(Color.Black), 110, startY + Offset);
-                    graphics.DrawString(catRows["itemcount"].ToString(),
-                            new Font(customfont, 10),
-                            new SolidBrush(Color.Black), 220, startY + Offset);
+            //    graphics.DrawString("Item Count",
+            //           new Font(customfont, 10),
+            //           new SolidBrush(Color.Black), 170, startY + Offset);
+            //    Offset = Offset + 15;
+            //    foreach (DataRow catRows in _categorysale.Rows)
+            //    {
+            //        Offset = Offset + 15;
+            //        graphics.DrawString(catRows["name"].ToString(),
+            //                 new Font(customfont, 10),
+            //                 new SolidBrush(Color.Black), startX, startY + Offset);
+            //        Offset = Offset + 15;
+            //        graphics.DrawString(String.Format("{0:n}", catRows["sale"]),
+            //                new Font(customfont, 10),
+            //                new SolidBrush(Color.Black), 110, startY + Offset);
+            //        graphics.DrawString(catRows["itemcount"].ToString(),
+            //                new Font(customfont, 10),
+            //                new SolidBrush(Color.Black), 220, startY + Offset);
 
-                }
-            }
-            Offset = Offset + 15;
+            //    }
+            //}
+            //Offset = Offset + 15;
             //underline
-            graphics.DrawString(underLine, new Font(customfont, 10),
-                     new SolidBrush(Color.Black), startX, startY + Offset);
-
-
-            //Total discount
-            Offset = Offset + 15;
-            graphics.DrawString("Total Discount",
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), startX, startY + Offset);
-            Offset = Offset + 15;
-            graphics.DrawString(String.Format("{0:n}",_totalDiscount),
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), 40, startY + Offset);
-
-            //Total ServiceCharge
-            Offset = Offset + 15;
-            graphics.DrawString("Total Service Charge",
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), startX, startY + Offset);
-            Offset = Offset + 15;
-            graphics.DrawString(String.Format("{0:n}", _totalServiceCharge),
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), 40, startY + Offset);
+            //graphics.DrawString(underLine, new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), startX, startY + Offset);
 
 
 
-            Offset = Offset + 15;
-            graphics.DrawString("Total Guest Count",
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), startX, startY + Offset);
+            //Offset = Offset + 15;
+            //graphics.DrawString("Total Guest Count",
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), startX, startY + Offset);
 
-            graphics.DrawString(_guestcount.ToString(),
-                     new Font(customfont, 10),
-                     new SolidBrush(Color.Black), 220, startY + Offset);
+            //graphics.DrawString(_guestcount.ToString(),
+            //         new Font(customfont, 10),
+            //         new SolidBrush(Color.Black), 220, startY + Offset);
 
-            Offset = Offset + 15;
+            //Offset = Offset + 15;
             //underline
             graphics.DrawString(underLine, new Font(customfont, 10),
                      new SolidBrush(Color.Black), startX, startY + Offset);

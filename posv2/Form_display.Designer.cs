@@ -49,6 +49,7 @@
             this.lbl_total_items = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
+            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -66,7 +67,10 @@
             this.lbl_discount = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.btn_pay = new System.Windows.Forms.Button();
+            this.btn_down = new System.Windows.Forms.Button();
+            this.btn_up = new System.Windows.Forms.Button();
             this.btn_take_away = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -91,6 +95,7 @@
             this.btn_void = new System.Windows.Forms.Button();
             this.btn_product_search = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_void_from_allorders = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.txt_selected_orderid = new System.Windows.Forms.TextBox();
@@ -116,24 +121,19 @@
             this.cashdisplaySerialPort = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
-            this.btn_logout = new System.Windows.Forms.Button();
-            this.btn_down = new System.Windows.Forms.Button();
-            this.btn_up = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tab_control.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel_menue.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cart)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_control
@@ -289,6 +289,17 @@
             this.lbl_total.Size = new System.Drawing.Size(54, 25);
             this.lbl_total.TabIndex = 8;
             this.lbl_total.Text = "0.00";
+            // 
+            // pictureBox_logo
+            // 
+            this.pictureBox_logo.Image = global::posv2.Properties.Resources.mpos;
+            this.pictureBox_logo.Location = new System.Drawing.Point(232, -19);
+            this.pictureBox_logo.Name = "pictureBox_logo";
+            this.pictureBox_logo.Size = new System.Drawing.Size(82, 69);
+            this.pictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_logo.TabIndex = 33;
+            this.pictureBox_logo.TabStop = false;
+            this.pictureBox_logo.Click += new System.EventHandler(this.pictureBox_logo_Click);
             // 
             // label17
             // 
@@ -484,6 +495,24 @@
             this.label19.TabIndex = 48;
             this.label19.Text = "(Search Products)";
             // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.Color.Silver;
+            this.btn_logout.BackgroundImage = global::posv2.Properties.Resources.ecommerce_collection_outlines_28_512;
+            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            this.btn_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(220)))), ((int)(((byte)(65)))));
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_logout.Location = new System.Drawing.Point(679, 579);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(150, 60);
+            this.btn_logout.TabIndex = 56;
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
             // btn_pay
             // 
             this.btn_pay.BackColor = System.Drawing.Color.Tomato;
@@ -501,6 +530,45 @@
             this.btn_pay.Text = "PAY";
             this.btn_pay.UseVisualStyleBackColor = false;
             this.btn_pay.Click += new System.EventHandler(this.btn_pay_Click);
+            // 
+            // btn_down
+            // 
+            this.btn_down.BackColor = System.Drawing.Color.White;
+            this.btn_down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_down.CausesValidation = false;
+            this.btn_down.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_down.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_down.FlatAppearance.BorderSize = 2;
+            this.btn_down.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btn_down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_down.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_down.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_down.Image = global::posv2.Properties.Resources.minus;
+            this.btn_down.Location = new System.Drawing.Point(590, 580);
+            this.btn_down.Name = "btn_down";
+            this.btn_down.Size = new System.Drawing.Size(74, 60);
+            this.btn_down.TabIndex = 54;
+            this.btn_down.UseVisualStyleBackColor = false;
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
+            // 
+            // btn_up
+            // 
+            this.btn_up.BackColor = System.Drawing.Color.White;
+            this.btn_up.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_up.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_up.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(54)))));
+            this.btn_up.FlatAppearance.BorderSize = 2;
+            this.btn_up.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(220)))), ((int)(((byte)(65)))));
+            this.btn_up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_up.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_up.Image = global::posv2.Properties.Resources.plus;
+            this.btn_up.Location = new System.Drawing.Point(512, 580);
+            this.btn_up.Name = "btn_up";
+            this.btn_up.Size = new System.Drawing.Size(74, 60);
+            this.btn_up.TabIndex = 53;
+            this.btn_up.UseVisualStyleBackColor = false;
+            this.btn_up.Click += new System.EventHandler(this.btn_up_Click);
             // 
             // btn_take_away
             // 
@@ -830,6 +898,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "All Orders";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::posv2.Properties.Resources.mpos;
+            this.pictureBox1.Location = new System.Drawing.Point(6, -14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 82);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // btn_void_from_allorders
             // 
             this.btn_void_from_allorders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(82)))), ((int)(((byte)(87)))));
@@ -1043,6 +1121,7 @@
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
             // 
             // orderid
             // 
@@ -1105,84 +1184,6 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // pictureBox_logo
-            // 
-            this.pictureBox_logo.Image = global::posv2.Properties.Resources.mpos;
-            this.pictureBox_logo.Location = new System.Drawing.Point(232, -19);
-            this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(82, 69);
-            this.pictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_logo.TabIndex = 33;
-            this.pictureBox_logo.TabStop = false;
-            this.pictureBox_logo.Click += new System.EventHandler(this.pictureBox_logo_Click);
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.BackColor = System.Drawing.Color.Silver;
-            this.btn_logout.BackgroundImage = global::posv2.Properties.Resources.ecommerce_collection_outlines_28_512;
-            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_logout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_logout.FlatAppearance.BorderSize = 0;
-            this.btn_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(220)))), ((int)(((byte)(65)))));
-            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_logout.Location = new System.Drawing.Point(679, 579);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(150, 60);
-            this.btn_logout.TabIndex = 56;
-            this.btn_logout.UseVisualStyleBackColor = false;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
-            // 
-            // btn_down
-            // 
-            this.btn_down.BackColor = System.Drawing.Color.White;
-            this.btn_down.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_down.CausesValidation = false;
-            this.btn_down.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_down.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btn_down.FlatAppearance.BorderSize = 2;
-            this.btn_down.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btn_down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_down.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_down.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_down.Image = global::posv2.Properties.Resources.minus;
-            this.btn_down.Location = new System.Drawing.Point(590, 580);
-            this.btn_down.Name = "btn_down";
-            this.btn_down.Size = new System.Drawing.Size(74, 60);
-            this.btn_down.TabIndex = 54;
-            this.btn_down.UseVisualStyleBackColor = false;
-            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
-            // 
-            // btn_up
-            // 
-            this.btn_up.BackColor = System.Drawing.Color.White;
-            this.btn_up.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_up.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_up.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(197)))), ((int)(((byte)(54)))));
-            this.btn_up.FlatAppearance.BorderSize = 2;
-            this.btn_up.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(220)))), ((int)(((byte)(65)))));
-            this.btn_up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_up.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_up.Image = global::posv2.Properties.Resources.plus;
-            this.btn_up.Location = new System.Drawing.Point(512, 580);
-            this.btn_up.Name = "btn_up";
-            this.btn_up.Size = new System.Drawing.Size(74, 60);
-            this.btn_up.TabIndex = 53;
-            this.btn_up.UseVisualStyleBackColor = false;
-            this.btn_up.Click += new System.EventHandler(this.btn_up_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::posv2.Properties.Resources.mpos;
-            this.pictureBox1.Location = new System.Drawing.Point(6, -14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 82);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form_display
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1205,6 +1206,7 @@
             this.panel_menue.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1212,13 +1214,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cart)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

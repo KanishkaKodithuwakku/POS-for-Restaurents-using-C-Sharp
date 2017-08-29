@@ -42,7 +42,7 @@ namespace posv2
         public static bool authproceed = false;
         public static bool managerPassword;
         public static string authid;
-        private bool updatemode = false;
+        public static bool updatemode = false;
        
         public Form_display()
         {
@@ -410,17 +410,22 @@ namespace posv2
         //reopen order
         private void button16_Click(object sender, EventArgs e)
         {
-            updatemode = true;
-            tab_control.SelectedTab = tabPage1;
-            SessionData.SetNewOrderId(long.Parse(txt_selected_orderid.Text));
-            reOpenOrder();
-            ShowCartTotal();
-            btn_dine_in.Visible = false;
-            btn_save.Visible = true;
-            btn_take_away.Enabled = false;
-            btn_pay.Enabled = true;
-            btn_logout.Enabled = true;
-
+            if (txt_selected_orderid.Text != "")
+            {
+                updatemode = true;
+                tab_control.SelectedTab = tabPage1;
+                SessionData.SetNewOrderId(long.Parse(txt_selected_orderid.Text));
+                reOpenOrder();
+                ShowCartTotal();
+                btn_dine_in.Visible = false;
+                btn_save.Visible = true;
+                btn_take_away.Enabled = false;
+                btn_pay.Enabled = true;
+                btn_logout.Enabled = true;
+            }
+            else {
+                MessageBox.Show("Select Order!");
+            }
         }
 
         private void btn_menue_Click(object sender, EventArgs e)
@@ -437,13 +442,7 @@ namespace posv2
         //selected row id into textbox
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView2.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView2.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells[0].Value);
-                txt_selected_orderid.Text = a;
-            }
+            
 
             // selected sel value
            // txt_selected_orderid.Text = dataGridView2.CurrentCell.Value.ToString();
@@ -809,6 +808,8 @@ namespace posv2
                 SessionData.SetCartTotal(double.Parse(dr["unit_price"].ToString()) * int.Parse(dr["qty"].ToString()));
                 SessionData.SetCartItemCount(1);
             }
+
+            updatemode = true;
            
         }
 
@@ -1014,6 +1015,7 @@ namespace posv2
                         resetAll();
                         dataGridView_cart.Rows.Clear();
                         dataGridView_cart.Refresh();
+                        printVoidReceipt();
                     }
                     else
                     {
@@ -1030,6 +1032,19 @@ namespace posv2
             
             
         }
+
+        void printVoidReceipt() {
+            long orderId = SessionData.newOrderId;
+            DataTable result;
+            con = new db();
+            string query = "SELECT order_details.*,products.name AS itemname FROM order_details JOIN products ON products.id = order_details.product_id WHERE order_details.order_id = '" + orderId + "'";
+            con.MysqlQuery(query);
+            result = con.QueryEx();
+            con.conClose();
+            
+        }
+
+
 
         private void btn_discount_Click(object sender, EventArgs e)
         {
@@ -1066,6 +1081,8 @@ namespace posv2
         private void btn_delete_item_Click(object sender, EventArgs e)
         {
 
+            MessageBox.Show(updatemode.ToString());
+
             if (updatemode)
             {
 
@@ -1089,6 +1106,9 @@ namespace posv2
                             userLog(authid, "void order item : " + itemid);
                             dataGridView_cart.Rows.Clear();
                             dataGridView_cart.Refresh();
+
+                            dataGridView2.Rows.Clear();
+                            dataGridView2.Refresh();
                             loadOrderDetails();
                             reOpenOrder();
                         }
@@ -1232,6 +1252,17 @@ namespace posv2
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             dataGridView_cart.FirstDisplayedScrollingRowIndex = e.NewValue;
+        }
+
+        private void dataGridView2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView2.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView2.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells[0].Value);
+                txt_selected_orderid.Text = a;
+            }
         }
 
        
